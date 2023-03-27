@@ -1,0 +1,11 @@
+package canzoni;
+
+import java.util.ArrayList;
+
+public class Main {
+    public static void main(String[] args) {
+        Playlist playlist = new Playlist();
+        playlist.inizio();
+
+    }
+}
