@@ -20,10 +20,6 @@ public class Personaggio {
         return combatLog;
     }
 
-//    public ArrayList<Integer> getRollLog() {
-//        return rollLog;
-//    }
-
     public Classe getClassePersonaggio() {
         return classePersonaggio;
     }
@@ -36,7 +32,6 @@ public class Personaggio {
         this.minDanni = (int) (minDanni * classePersonaggio.getMoltiplicatoreDanniMin());
         this.maxDanni = (int) (maxDanni * classePersonaggio.getMoltiplicatoreDanniMax());
         combatLog = new ArrayList<>();
-//        rollLog = new ArrayList<>();
     }
 
     private int puntiVita;
@@ -47,8 +42,7 @@ public class Personaggio {
 
     private int maxDanni;
 
-    ArrayList<Integer> combatLog;
-//    ArrayList<Integer> rollLog;
+    private ArrayList<Integer> combatLog;
 
     Classe classePersonaggio;
 
@@ -72,10 +66,6 @@ public class Personaggio {
         return combatLog.get(combatLog.size()-1);
     }
 
-
-//    private int getUltimoRoll() {
-//        return rollLog.get(rollLog.size()-1);
-//    }
     public void consumaMana(int puntiMana) {
         setPuntiMana(getPuntiMana() - puntiMana);
     }
@@ -90,15 +80,7 @@ public class Personaggio {
     }
 
     public int colpisci() {
-        return registraDanni(roll(minDanni, maxDanni));
-    }
-
-    public int roll(int min, int max) {
-        int roll = Dado.roll(min, max);
-//        rollLog.add(roll);
-        System.out.println(this.getNome() + " il/la " + this.getClassePersonaggio() + "/a rulla i dadi!");
-        System.out.println(this.getNome() + " ha rullato " + roll + " da un rullo di " + min + " a " + max);
-        return roll;
+        return registraDanni(Dado.roll(minDanni, maxDanni));
     }
 
     public boolean isAlive() {

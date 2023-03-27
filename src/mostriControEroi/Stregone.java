@@ -2,7 +2,6 @@ package mostriControEroi;
 
 import mostriControEroi.abilities.Abilità;
 import mostriControEroi.abilities.Attacca;
-import mostriControEroi.abilities.special.Bevi;
 import mostriControEroi.abilities.special.Incantesimo;
 
 public class Stregone extends Classe {

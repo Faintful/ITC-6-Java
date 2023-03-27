@@ -36,12 +36,12 @@ public class Vampiro extends Classe {
 
     @Override
     public double getMoltiplicatoreDanniMin() {
-        return 1;
+        return 0.5;
     }
 
     @Override
     public double getMoltiplicatoreDanniMax() {
-        return 1;
+        return 0.5;
     }
 
     @Override

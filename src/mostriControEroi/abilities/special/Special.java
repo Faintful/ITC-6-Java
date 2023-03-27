@@ -5,8 +5,13 @@ import mostriControEroi.abilities.Attacca;
 
 public abstract class Special extends Attacca {
 
+//    Un attacco speciale non è altro che un attacco semplice che infligge più danni...
     @Override
-    public int getDanni() {
+    public double getDanni() {
+        return 2;
+    }
+
+    public int getCostoMana() {
         return 20;
     }
 
@@ -14,11 +19,9 @@ public abstract class Special extends Attacca {
     public void esegui(Personaggio fonte, Personaggio bersaglio) {
         //Un attacco speciale non è altro che un attacco semplice...
         super.esegui(fonte, bersaglio);
-        //...Che infligge più danni...
-        //TODO: Far che l'attacco speciale infligga più danni rispetto all'attacco semplice
         //...E che consuma del mana.
-        fonte.consumaMana(20);
-        System.out.println(fonte.getNome() + " perde " + 20 + " punti di mana!");
+        fonte.consumaMana(getCostoMana());
+        System.out.println(fonte.getNome() + " perde " + getCostoMana() + " punti di mana!");
     }
 
 }
